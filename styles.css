@@ -79,7 +79,9 @@
         padding: 0;
         background-color: white;
         align-items: center;
-        overflow-x: hidden; /* Nascondi lo scroll orizzontale */
+        overflow-x: hidden;
+        width: 100%; /
+        box-sizing: border-box;
     }
     h1 {
     font-weight: bold;
@@ -92,7 +94,28 @@
         padding: 20px;
         text-align: center;
         width: 100%;
+        margin: 0 auto; /* Imposta il margine laterale per allineare l'header con il main */
+        max-width: 800px; /* Limita la larghezza massima per evitare che diventi troppo largo su schermi grandi */
+        box-sizing: border-box;
     }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 20px;
+            margin: 0 20px; /* Imposta il margine laterale per dispositivi più piccoli, simile a quello di main */
+            max-width: calc(100% - 40px); /* Adatta la larghezza per dispositivi mobili */
+        }
+    }
+
+    @media (max-width: 480px) {
+        header {
+            padding: 15px; /* Riduci il padding per schermi molto piccoli */
+            margin: 0 10px; /* Riduci i margini laterali per schermi più piccoli */
+            max-width: calc(100% - 20px); /* Riduci ulteriormente la larghezza */
+        }
+    }
+
+
     main {
         padding: 20px;
         max-width: 800px;
@@ -222,3 +245,6 @@ text-align: left;
 .project:nth-child(6) {
     background-color: #EB8A67;
 }
+
+
+/*MOBILE RESPONSIVE*/
